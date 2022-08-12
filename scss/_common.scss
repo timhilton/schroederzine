@@ -40,7 +40,7 @@ ul {
         transform-origin: center;
     }
 
-    &:hover::after, &:focus::after {
+    &:hover::after {
         transform: scale(1);
         opacity: 1;
     }

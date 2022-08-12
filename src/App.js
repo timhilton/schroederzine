@@ -10,6 +10,7 @@ import Music from './pages/Music';
 import About from './pages/About';
 import Home from './pages/Home';
 import Articles from './pages/Articles';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                     <Route exact path='/movies' element={<Movies/>}/>
                     <Route exact path='/articles' element={<Articles/>}/>
                 </Routes>
+                <Footer/>
             </Router>
         </div>
     );
