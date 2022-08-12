@@ -84,8 +84,8 @@ nav {
         display: none;
         flex-basis: 100%;
         background-color: $background;
-        margin-left: 16px;
-        margin-right: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
         transition: transform 300ms ease-in-out;
         transform: translateY(-100%);
         position: relative;
