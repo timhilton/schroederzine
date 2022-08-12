@@ -1,7 +1,10 @@
-const About = () => {
+import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+
+const About = ({about}) => {
     return (
-        <section>
-            About
+        <section className="container about">
+            <h2>{about.title}</h2>
+            {documentToReactComponents(about.desc.json)}
         </section>
     )
 }
