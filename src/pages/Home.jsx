@@ -1,8 +1,8 @@
+import Splash from "../components/Spash"
+
 const Home = () => {
     return (
-        <section>
-            Home
-        </section>
+        <Splash/>
     )
 }
 

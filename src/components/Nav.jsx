@@ -24,7 +24,7 @@ const Nav = () => {
                     <li><Link className="nav-links" to="/music">Music</Link></li>
                     <li><Link className="nav-links" to="/movies">Movies</Link></li>
                     <li><Link className="nav-links" to="/articles">Articles</Link></li>
-                    <li><a href="mailto:info@schroderzine.com" className="nav-links">Contact</a></li>
+                    <li><a href="mailto:schroederzine@gmail.com" className="nav-links">Contact</a></li>
                 </ul>
                 <Hamburger open={open} setOpen={setOpen}/>
             </div>
@@ -34,7 +34,7 @@ const Nav = () => {
                     <li><Link className="nav-links" to="/music" onClick={() => setOpen(!open)}>Music</Link></li>
                     <li><Link className="nav-links" to="/movies" onClick={() => setOpen(!open)}>Movies</Link></li>
                     <li><Link className="nav-links" to="/articles" onClick={() => setOpen(!open)}>Articles</Link></li>
-                    <li><a href="mailto:info@schroderzine.com" className="nav-links" onClick={() => setOpen(!open)}>Contact</a></li>
+                    <li><a href="mailto:schroederzine@gmail.com" className="nav-links" onClick={() => setOpen(!open)}>Contact</a></li>
                 </ul>
             </div>
         </nav>

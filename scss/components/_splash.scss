@@ -5,6 +5,9 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
     @include medium {
         width: 692px;
     }
@@ -13,38 +16,9 @@
         width: 87.5%;
     }
 
-    .title {
-        display: flex;
-        flex-direction: column;
-        width: max-content;
-        font-size: 48px;
-        line-height: 30px;
-        text-transform: uppercase;
-        margin: 0;
-        padding: 0;
-
-        @include medium {
-            font-size: 36px;
-            line-height: 24px;
-        }
-
-        @include small {
-            font-size: 24px;
-            line-height: 15px;
-        }
-
-        &-small {
-            font-size: 14px;
-            align-self: flex-start;
-            text-transform: lowercase;
-
-            @include medium {
-                font-size: 12px;
-            }
-
-            @include small {
-                font-size: 10px;
-            }
+    svg {
+        g, path {
+        fill: $yellow;
         }
     }
 }
