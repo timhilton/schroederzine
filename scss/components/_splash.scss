@@ -1,19 +1,15 @@
 .splash {
-    width: 980px;
-    height: 100vh;
+    @extend .container;
+    @include center;
+    height: calc(100vh - $-nav-height - $-footer-height);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
 
-    @include medium {
-        width: 692px;
-    }
 
     @include small {
-        width: 87.5%;
+        height: calc(100vh - $-nav-height-s - $-footer-height);
     }
 
     svg {

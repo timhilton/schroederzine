@@ -2,16 +2,41 @@
     box-sizing: border-box;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Galano';
-    background-color: $background;
-    color: $white;
+html {
+    height: 100%;
 }
 
-h1 {
-    font-family: 'Saira';
+body {
+    font-family: 'Galano';
+    margin: 0;
+    padding: 0;
+    background-color: $background;
+    color: $white;
+    height: 100%;
+}
+
+.App {
+    min-height: 100%;
+}
+
+main {
+    overflow: auto;
+    padding-top: $-nav-height;
+    padding-bottom: $-footer-height;
+
+    @include small {
+        padding-top: $-nav-height-s;
+    }
+}
+
+footer {
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: $-footer-height;
 }
 
 ul {
@@ -43,6 +68,18 @@ ul {
     &:hover::after {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+.container {
+    width: 980px;
+
+    @include medium {
+        width: 692px;
+    }
+
+    @include small {
+        width: 87.5%;
     }
 }
 
