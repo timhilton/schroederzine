@@ -1,4 +1,4 @@
-import {ReactComponent as Logo} from '../svgs/logo.svg';
+import Logo from '../svgs/logo.svg';
 
 const Splash = () => {
     return (
