@@ -14,7 +14,7 @@ export async function getStaticPaths() {
     })
 
     const paths = articleList.map((article) => ({
-        params: { id: article.title}
+        params: { id: article.title }
     }))
 
     return {
