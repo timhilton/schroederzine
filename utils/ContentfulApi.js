@@ -42,4 +42,30 @@ export default class ContentfulApi {
 
         return aboutContent;
     }
+
+    static async getArticles() {
+        const query = `
+        {
+            articleCollection {
+                items {
+                    title,
+                    subHeading,
+                    copy {
+                        json
+                    },
+                    mediaCollection {
+                        items {
+                            fileName,
+                            url
+                        }
+                    }
+                }
+            }
+        }`
+
+        const response = await this.callContentful(query);
+        const articles = response.data.articleCollection.items;
+
+        return articles;
+    }
 }
