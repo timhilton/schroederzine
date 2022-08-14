@@ -1,4 +1,3 @@
-import Layout from "../src/components/Layout";
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
 import ContentfulApi from '../utils/ContentfulApi';
 

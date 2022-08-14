@@ -1,0 +1,42 @@
+.article-container {
+    margin-bottom: 88px;
+
+    h1 {
+        font-size: 3em;
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        margin-bottom: 2.5rem;
+    }
+
+    p {
+        font-weight: 300;
+    }
+
+    b {
+        font-weight: 500;
+        margin-inline-end: 0.5em;
+    }
+
+    .hero-image {
+        width: 50%;
+        border-radius: 6px;
+    }
+
+    .images-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            border-radius: 6px;
+            width: 75%;
+            margin-right: 0;
+            margin-top: 24px;
+        }
+    }
+}
