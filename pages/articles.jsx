@@ -16,7 +16,7 @@ const Articles = ({articles}) => {
 
     for (let i = 0; i < articles.length; i++) {
         articleList.push(
-            <li>
+            <li key={i}>
                 <ArticleTile article={articles[i]} key={i}/>
             </li>
         )        
