@@ -68,4 +68,31 @@ export default class ContentfulApi {
 
         return articles;
     }
+
+    static async getMusicReviews() {
+        const query = `
+        {
+            musicCollection {
+                items {
+                    album,
+                    artist,
+                    label,
+                    links,
+                    copy {
+                        json
+                    },
+                    author,
+                    artwork {
+                        url
+                        title
+                    }
+                }
+            }
+        }`
+
+        const response = await this.callContentful(query);
+        const musicReviews = response.data.musicCollection.items;
+
+        return musicReviews;
+    }
 }
