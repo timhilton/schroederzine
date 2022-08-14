@@ -37,6 +37,63 @@
             }
         }
     }
+
+    &-music-review {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &-music {
+        width: 100%;
+        display: flex;
+        padding: 24px 24px 0;
+
+        .artist {
+            font-weight: 400;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        a {
+            color: $background;
+            position: relative;
+        
+            &::after {
+                content: '▶';
+                position: absolute;
+                margin-left: 6px;
+                font-size: 12px;
+                margin-top: 4px;
+            }
+        }
+
+        @include small {
+            .tile-headline {
+                padding: 0;
+                padding-left: 24px;
+            }
+
+            img {
+                width: 100px;
+                height: 100px;
+                margin-top: 8px;
+            } 
+        }
+
+ 
+    }
+
+    &-review {
+        width: 100%;
+        padding: 24px;
+
+        p {
+            font-weight: 300;
+        }
+    }
 }
 
 .tiles-list {
