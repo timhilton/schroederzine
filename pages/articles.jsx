@@ -16,13 +16,16 @@ const Articles = ({articles}) => {
 
     for (let i = 0; i < articles.length; i++) {
         articleList.push(
-            <ArticleTile article={articles[i]} key={i}/>
+            <li>
+                <ArticleTile article={articles[i]} key={i}/>
+            </li>
         )        
     }
 
     return (
-        <section>
-            <ul>
+        <section className="container">
+            <h1>ARTICLES</h1>
+            <ul className="tiles-list">
             {articleList}
             </ul>
         </section>

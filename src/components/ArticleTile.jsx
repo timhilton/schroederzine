@@ -10,9 +10,13 @@ const ArticleTile = ({article}) => {
         return (
             <Link href={path}>
                 <a>
-                    <img src={image.url} alt={image.fileName}/>
-                    <h3>{title}</h3>
-                    <h4>{subHeading}</h4>
+                    <div className="tile tile-image">
+                        <img src={image.url} alt={image.fileName}/>
+                        <div className="tile-headline">
+                            <h3>{title}</h3>
+                            <h4>{subHeading}</h4>
+                        </div>
+                    </div>
                 </a>
             </Link>
         )
@@ -20,8 +24,12 @@ const ArticleTile = ({article}) => {
         return (
             <Link href={path}>
                 <a>
-                    <h3>{title}</h3>
-                    <h4>{subHeading}</h4>
+                    <div className="tile tile-text">
+                        <div className="tile-headline">
+                            <h3>{title}</h3>
+                            <h4>{subHeading}</h4>
+                        </div>
+                    </div>
                 </a>
             </Link>
         )
