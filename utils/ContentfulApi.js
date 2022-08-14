@@ -95,4 +95,30 @@ export default class ContentfulApi {
 
         return musicReviews;
     }
+
+    static async getMovieReviews() {
+        const query = `
+        {
+            moviesCollection {
+              items {
+                    title,
+                    director,
+                    actors,
+                    link,
+                    copy {
+                        json
+                    },
+                    poster {
+                        url,
+                        title
+                    }
+                }
+            }
+        }`;
+
+        const response = await this.callContentful(query);
+        const movieReviews = response.data.moviesCollection.items;
+
+        return movieReviews;
+    }
 }

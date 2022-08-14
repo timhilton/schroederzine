@@ -38,12 +38,14 @@
         }
     }
 
-    &-music-review {
+    &-music-review,
+    &-movie-review {
         display: flex;
         flex-wrap: wrap;
     }
 
-    &-music {
+    &-music,
+    &-movie {
         width: 100%;
         display: flex;
         padding: 24px 24px 0;
@@ -81,9 +83,17 @@
                 height: 100px;
                 margin-top: 8px;
             } 
+        } 
+    }
+
+    &-movie {
+        img {
+            height: 278px;
         }
 
- 
+        @include small {
+            height: 139px;
+        }
     }
 
     &-review {
