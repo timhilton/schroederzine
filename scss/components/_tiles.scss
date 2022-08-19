@@ -8,6 +8,7 @@
         display: flex;
         flex-direction: column;
         padding: 24px;
+        padding-left: 0;
         justify-content: center;
         text-decoration: none;
         h3, h4 {
@@ -23,6 +24,10 @@
         h4 {
             font-weight: 300;
         }
+    }
+
+    img + &-headline {
+        padding-left: 24px;
     }
 
     &-image {
@@ -75,6 +80,8 @@
         @include small {
             .tile-headline {
                 padding: 0;
+            }
+            img + .tile-headline {
                 padding-left: 24px;
             }
 
@@ -87,12 +94,15 @@
     }
 
     &-movie {
+        height: auto;
         img {
             height: 278px;
         }
 
         @include small {
-            height: 139px;
+            img {
+                height: 139px;
+            }
         }
     }
 
