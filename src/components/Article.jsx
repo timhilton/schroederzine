@@ -9,27 +9,25 @@ const Article = ({article}) => {
             <img src={media[i].url} key={i}/>
         )   
     }
-    if (article.mediaCollection.items.length !== 0) {
-        return (
-            <section className="container article-container">
-                <h1>{article.title}</h1>
-                <h3>{article.subHeading}</h3>
-                <img className="hero-image" src={heroImage.url}/>
-                {documentToReactComponents(article.copy.json)}
-                <div className="images-container">
-                    {images}
-                </div>
-            </section>
-        )
-    } else {
-        return (
-            <section className="container article-container">
-                <h1>{article.title}</h1>
-                <h3>{article.subHeading}</h3>
-                {documentToReactComponents(article.copy.json)}
-            </section>
-        ) 
-    }
+
+    return (
+        <section className="container article-container">
+            <h1>{article.title}</h1>
+            <h3>{article.subHeading}</h3>
+            {article.mediaCollection.items.length > 0 && 
+            <img className="hero-image" src={heroImage.url}/>
+            }
+            { article.copy && 
+            documentToReactComponents(article.copy.json)
+}
+            {article.mediaCollection.items.length > 0 && 
+            <div className="images-container">
+                {images}
+            </div>
+            } 
+        </section>
+    )
 }
 
 export default Article;
+

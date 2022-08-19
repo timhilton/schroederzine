@@ -9,12 +9,9 @@ const ArticlePage = ({article}) => {
 
 export async function getStaticPaths() {
     const articleList = await ContentfulApi.getArticles();
-    articleList.forEach((article) => {
-        article.title = article.title.toLowerCase().replace(' ', '-');
-    })
 
     const paths = articleList.map((article) => ({
-        params: { id: article.title }
+        params: { id: article.title.toLowerCase().replaceAll(' ', '-') }
     }))
 
     return {
@@ -25,13 +22,15 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const {id} = params;
-    const articleList = await ContentfulApi.getArticles();
-    const title = id.replace('-', ' ');
-    const item = articleList.filter((articleList) => articleList.title.toLowerCase() === title);
+    let articleList = await ContentfulApi.getArticles();
+
+    let slug = id.replaceAll('-', ' ');
+
+    let item = articleList.filter((article) => article.title.toLowerCase() === slug)[0];
 
     return {
         props: {
-            article: item[0]
+            article: item
         }
     };
 }

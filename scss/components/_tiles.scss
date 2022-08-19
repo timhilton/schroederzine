@@ -114,6 +114,12 @@
             font-weight: 300;
         }
     }
+
+    &-text {
+        .tile-headline {
+            padding-left: 24px;
+        }
+    }
 }
 
 .tiles-list {
