@@ -7,7 +7,9 @@ const MovieTile = ({movie}) => {
     return (
         <div className="tile tile-movie-review">
             <div className="tile-movie">
+                { poster !== null &&
                 <img src={poster.url} alt={poster.title}/>
+                }
                 <div className="tile-headline">
                     <h3>{title}</h3>
                     { director !== null &&
