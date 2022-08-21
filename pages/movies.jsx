@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import MovieTile from '../src/components/MovieTile';
 import ContentfulApi from '../utils/ContentfulApi';
 
@@ -22,12 +23,17 @@ const Movies = ({movies}) => {
         )        
     }
     return (
+        <>
+        <Head>
+            <title>Schroeder Zine - Movies</title>
+        </Head>
         <section className="container">
             <h1>MOVIE REVIEWS</h1>
             <ul className="tiles-list">
             {movieReviewsList}
             </ul>
         </section>
+        </>
     )
 }
 
