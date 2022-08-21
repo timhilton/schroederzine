@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import MusicTile from '../src/components/MusicTile';
 import ContentfulApi from '../utils/ContentfulApi';
 
@@ -23,12 +24,17 @@ const Music = ({music}) => {
     }
 
     return (
+        <>
+        <Head>
+            <title>Schroeder Zine - Music</title>
+        </Head>
         <section className="container">
             <h1>MUSIC REVIEWS</h1>
             <ul className="tiles-list">
             {musicReviewsList}
             </ul>
         </section>
+        </>
     )
 }
 
