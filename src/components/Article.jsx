@@ -1,8 +1,11 @@
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import dateParser from '../../utils/dateParser';
+import Head from 'next/head';
 
 const Article = ({article}) => {
+    const {title, subHeading, mediaCollection, copy, date, legacy, author} = article;
     const images = [];
-    const media = article.mediaCollection.items;
+    const media = mediaCollection.items;
     const heroImage = media[0];
     for (let i = 1; i < media.length; i++) {
         images.push(
@@ -10,22 +13,30 @@ const Article = ({article}) => {
         )   
     }
 
+    let newDate = dateParser(date, legacy);
+
     return (
+        <>
+        <Head>
+            <title>Schroeder Zine - {title}</title>
+        </Head>
         <section className="container article-container">
-            <h1>{article.title}</h1>
-            <h3>{article.subHeading}</h3>
-            {article.mediaCollection.items.length > 0 && 
+            <h1>{title}</h1>
+            <h3>{subHeading}</h3>
+            <p className="date">{newDate}{author && <span> - {author}</span>}</p>
+            {mediaCollection.items.length > 0 && 
             <img className="hero-image" src={heroImage.url}/>
             }
-            { article.copy && 
-            documentToReactComponents(article.copy.json)
+            { copy && 
+            documentToReactComponents(copy.json)
 }
-            {article.mediaCollection.items.length > 0 && 
+            {mediaCollection.items.length > 0 && 
             <div className="images-container">
                 {images}
             </div>
             } 
         </section>
+        </>
     )
 }
 

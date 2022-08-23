@@ -18,7 +18,11 @@ const Nav = () => {
     return (
         <nav>
             <div className={open ? "nav-content hairline" : "nav-content"}>
-                <Link href="/"><Logo /></Link>
+                <Link href="/">
+                    <a>
+                        <Logo />
+                    </a>
+                </Link>
                 <ul className="nav-links-container">
                     <li><Link href="/about"><a className="nav-links">About</a></Link></li>
                     <li><Link href="/music"><a className="nav-links">Music</a></Link></li>

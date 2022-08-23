@@ -20,7 +20,7 @@ const MovieTile = ({movie}) => {
                     }
                     {link !== null &&
                         <Link href={link}>
-                            <a>
+                            <a target="_blank" rel="noopener noreferrer">
                                 Watch
                             </a>
                         </Link>

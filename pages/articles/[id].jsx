@@ -4,12 +4,7 @@ import ContentfulApi from '../../utils/ContentfulApi';
 
 const ArticlePage = ({article}) => {
     return (
-        <>
-        <Head>
-            <title>Schroeder Zine - {article.title}</title>
-        </Head>
         <Article article={article}/>
-        </>
     )
 }
 

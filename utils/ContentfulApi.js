@@ -58,7 +58,10 @@ export default class ContentfulApi {
                             fileName,
                             url
                         }
-                    }
+                    },
+                    date,
+                    legacy,
+                    author
                 }
             }
         }`

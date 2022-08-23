@@ -16,7 +16,7 @@ const MusicTile = ({music}) => {
                     }
                     {links !== null &&
                         <Link href={links}>
-                            <a>
+                            <a target="_blank" rel="noopener noreferrer">
                                 Listen
                             </a>
                         </Link>
