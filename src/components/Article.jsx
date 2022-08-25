@@ -3,28 +3,34 @@ import dateParser from '../../utils/dateParser';
 import Head from 'next/head';
 
 const Article = ({article}) => {
-    const {title, subHeading, mediaCollection, copy, date, legacy, author} = article;
+    const {title, subHeading, mediaCollection, copy, date, legacy, author, hasHeader} = article;
     const images = [];
     const media = mediaCollection.items;
-    const heroImage = media[0];
-    for (let i = 1; i < media.length; i++) {
+    let start = hasHeader ? 1 : 0;
+    let heroImage;
+    if (hasHeader) {
+        heroImage = media[0];
+    }
+
+    for (let i = start; i < media.length; i++) {
         images.push(
             <img src={media[i].url} key={i}/>
         )   
     }
 
     let newDate = dateParser(date, legacy);
+    let pageName = `Schroeder Zine - ${title}`;
 
     return (
         <>
         <Head>
-            <title>Schroeder Zine - {title}</title>
+            <title>{pageName}</title>
         </Head>
         <section className="container article-container">
             <h1>{title}</h1>
             <h3>{subHeading}</h3>
             <p className="date">{newDate}{author && <span> - {author}</span>}</p>
-            {mediaCollection.items.length > 0 && 
+            { hasHeader && 
             <img className="hero-image" src={heroImage.url}/>
             }
             { copy && 

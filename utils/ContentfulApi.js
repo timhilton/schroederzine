@@ -61,7 +61,8 @@ export default class ContentfulApi {
                     },
                     date,
                     legacy,
-                    author
+                    author,
+                    hasHeader
                 }
             }
         }`
