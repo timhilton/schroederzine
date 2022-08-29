@@ -56,7 +56,8 @@ export default class ContentfulApi {
                     mediaCollection {
                         items {
                             fileName,
-                            url
+                            url,
+                            description
                         }
                     },
                     date,

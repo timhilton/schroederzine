@@ -14,8 +14,11 @@ const Article = ({article}) => {
 
     for (let i = start; i < media.length; i++) {
         images.push(
-            <img src={media[i].url} key={i}/>
-        )   
+            <figure>
+                <img src={media[i].url} key={i}/>
+                <figcaption>{media[i].description}</figcaption>
+            </figure>
+        )
     }
 
     let newDate = dateParser(date, legacy);
@@ -37,7 +40,7 @@ const Article = ({article}) => {
             documentToReactComponents(copy.json)
 }
             {mediaCollection.items.length > 0 && 
-            <div className="images-container">
+            <div className={hasHeader ? "images-container images-grid-container" : "images-container"}>
                 {images}
             </div>
             } 
