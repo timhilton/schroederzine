@@ -1,14 +1,12 @@
 export default function dateParser(date, legacy) {
-    let newDate;
-    newDate = date.split('-');
-    newDate[2] = newDate[2].split('T')[0];
-    newDate = newDate.splice(0, 3);
-
+    const newDate = new Date(date);
+  
     if (legacy) {
-        newDate = `${newDate[0]}`
+      return `${newDate.getUTCFullYear()}`;
     } else {
-        newDate = `${newDate[1]}/${newDate[2]}/${newDate[0]}`
+      const month = newDate.getUTCMonth() + 1;
+      const day = newDate.getUTCDate();
+      const year = newDate.getUTCFullYear();
+      return `${month}/${day}/${year}`;
     }
-
-    return newDate;
-}
+  }

@@ -7,18 +7,18 @@ const MovieTile = ({movie}) => {
     return (
         <div className="tile tile-movie-review">
             <div className="tile-movie">
-                { poster !== null &&
+                { poster?.url &&
                 <img src={poster.url} alt={poster.title}/>
                 }
                 <div className="tile-headline">
                     <h3>{title}</h3>
-                    { director !== null &&
+                    { director &&
                         <h4 className="artist"><strong>Director:</strong> {director}</h4>
                     }
-                    {actors !== null &&
+                    {actors &&
                         <h4><strong>Actors:</strong> {actors}</h4>
                     }
-                    {link !== null &&
+                    {link &&
                         <Link href={link}>
                             <a target="_blank" rel="noopener noreferrer">
                                 Watch
@@ -28,7 +28,7 @@ const MovieTile = ({movie}) => {
                 </div>
             </div>
             <div className="tile-review">
-                {documentToReactComponents(copy.json)}
+                {documentToReactComponents(copy?.json)}
             </div>
         </div>
     )
