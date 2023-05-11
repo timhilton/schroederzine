@@ -1,35 +1,31 @@
 @font-face {
     font-family: 'Saira';
-    src: local('SairaStencilOne-Regular'),
-    local('SairaStencilOne-Regular'),
-    url('/fonts/sairastencilone-regular.ttf') format('truetype');
+    src: url('/fonts/sairastencilone-regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: 'Galano';
-    src: local('Galano Grotesque Medium'),
-    local('Galano-Grotesque-Medium'),
-    url('/fonts/galano-grotesque-medium.otf') format('opentype');
+    src: url('/fonts/galano-grotesque-medium.otf') format('opentype');
+    font-stretch: normal;
     font-weight: 400;
     font-style: normal;
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: 'Galano';
-    src: local('Galano Grotesque SemiBold'),
-    local('Galano-Grotesque-SemiBold'),
-    url('/fonts/galano-grotesque-semibold.otf') format('opentype');
+    src: url('/fonts/galano-grotesque-semibold.otf') format('opentype');
+    font-stretch: normal;
     font-weight: 500;
     font-style: normal;
-}
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: 'Galano';
-    src: local('Galano Grotesque Light'),
-    local('Galano-Grotesque-Light'),
-    url('/fonts/galano-grotesque-light.otf') format('opentype');
+    src: url('/fonts/galano-grotesque-light.otf') format('opentype');
+    font-stretch: normal;
     font-weight: 300;
     font-style: normal;
-}
+  }
+  

@@ -3,25 +3,16 @@ import MovieTile from '../src/components/MovieTile';
 import ContentfulApi from '../utils/ContentfulApi';
 
 export async function getStaticProps() {
-    const movieReviewsList = await ContentfulApi.getMovieReviews();
+    const movies = await ContentfulApi.getMovieReviews();
   
     return {
         props: {
-            movies: movieReviewsList
+            movies
         }
     };
 }
 
 const Movies = ({movies}) => {
-    const movieReviewsList = [];
-
-    for (let i = 0; i < movies.length; i++) {
-        movieReviewsList.push(
-            <li key={i}>
-                <MovieTile movie={movies[i]} key={i}/>
-            </li>
-        )        
-    }
     return (
         <>
         <Head>
@@ -30,7 +21,11 @@ const Movies = ({movies}) => {
         <section className="container">
             <h1>MOVIE REVIEWS</h1>
             <ul className="tiles-list">
-            {movieReviewsList}
+                {movies.map((movie, index) => (
+                    <li key={index}>
+                        <MovieTile movie={movie} />
+                    </li>
+                ))}
             </ul>
         </section>
         </>

@@ -1,75 +1,77 @@
 .article-container {
     margin-bottom: 88px;
-
+  
     h1 {
-        font-size: 3em;
-        margin: 0;
-        padding: 0;
+      font-size: 3em;
+      margin: 0;
+      padding: 0;
     }
-
+  
     h3 {
-        margin: 0;
-        padding: 0;
-        font-weight: 400;
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
     }
-
+  
     p {
-        font-weight: 300;
+      font-weight: 300;
     }
-
+  
     b {
-        font-weight: 500;
-        margin-inline-end: 0.5em;
+      font-weight: 500;
+      margin-inline-end: 0.5em;
     }
-
+  
     a {
+      color: $white;
+      &:hover,
+      &:focus {
         color: $white;
-
-        &:hover, &:focus {
-            color: $white;
-        }
+      }
     }
-
+  
     .date {
-        font-size: 0.8em;
-        font-weight: 700;
-        margin: 0;
-        padding: 0;
-        margin-top: 0.25em;
-        margin-bottom: 2.5rem;
+      font-size: 0.8em;
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+      margin-top: 0.25em;
+      margin-bottom: 2.5rem;
     }
-
+  
     .hero-image {
-        width: 65%;
-        border-radius: 6px;
-
-        @include small {
-            width: 100%;
-        }
+      width: 65%;
+      border-radius: 6px;
+  
+      @include small {
+        width: 100%;
+      }
     }
-
+  
     .images-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        img {
-            border-radius: 6px;
-            width: 75%;
-            margin-right: 0;
-            margin-top: 24px;
-        }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      img {
+        border-radius: 6px;
+        width: 75%;
+        margin-right: 0;
+        margin-top: 24px;
+      }
     }
-
+  
     .images-grid-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-
-        img {
-            width: 100%;
-        }
-
-        @include small {
-            grid-template-columns: repeat(1, 1fr);
-        }
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  
+      img {
+        width: 100%;
+      }
+  
+      @include small {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
-}
+  }
+  

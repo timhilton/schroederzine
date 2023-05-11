@@ -1,53 +1,57 @@
-import {documentToReactComponents} from '@contentful/rich-text-react-renderer';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import dateParser from '../../utils/dateParser';
 import Head from 'next/head';
 
-const Article = ({article}) => {
-    const {title, subHeading, mediaCollection, copy, date, legacy, author, hasHeader} = article;
-    const images = [];
-    const media = mediaCollection.items;
-    let start = hasHeader ? 1 : 0;
-    let heroImage;
-    if (hasHeader) {
-        heroImage = media[0];
-    }
+const HeroImage = ({ media }) => {
+  if (!media) return null;
 
-    for (let i = start; i < media.length; i++) {
-        images.push(
-            <figure>
-                <img src={media[i].url} key={i}/>
-                <figcaption>{media[i].description}</figcaption>
-            </figure>
-        )
-    }
+  return <img className="hero-image" src={media.url} alt={media.description} />;
+};
 
-    let newDate = dateParser(date, legacy);
-    let pageName = `Schroeder Zine - ${title}`;
+const Article = ({ article }) => {
+  const {
+    title,
+    subHeading,
+    mediaCollection: { items: media = [] },
+    copy,
+    date,
+    legacy,
+    author,
+    hasHeader,
+  } = article;
 
-    return (
-        <>
-        <Head>
-            <title>{pageName}</title>
-        </Head>
-        <section className="container article-container">
-            <h1>{title}</h1>
-            <h3>{subHeading}</h3>
-            <p className="date">{newDate}{author && <span> - {author}</span>}</p>
-            { hasHeader && 
-            <img className="hero-image" src={heroImage.url}/>
-            }
-            { copy && 
-            documentToReactComponents(copy.json)
-}
-            {mediaCollection.items.length > 0 && 
-            <div className={hasHeader ? "images-container images-grid-container" : "images-container"}>
-                {images}
-            </div>
-            } 
-        </section>
-        </>
-    )
-}
+  const images = media.slice(hasHeader ? 1 : 0).map((item, index) => (
+    <figure key={index}>
+      <img src={item.url} alt={item.description} />
+      {item.description && <figcaption>{item.description}</figcaption>}
+    </figure>
+  ));
+
+  const newDate = dateParser(date, legacy);
+  const pageName = `Schroeder Zine - ${title}`;
+
+  return (
+    <>
+      <Head>
+        <title>{pageName}</title>
+      </Head>
+      <section className="container article-container">
+        <h1>{title}</h1>
+        <h3>{subHeading}</h3>
+        <p className="date">
+          {newDate}
+          {author && <span> - {author}</span>}
+        </p>
+        <HeroImage media={media[0]} />
+        {copy && documentToReactComponents(copy.json)}
+        {media.length > 1 && (
+          <div className={`images-container${hasHeader ? ' images-grid-container' : ''}`}>
+            {images}
+          </div>
+        )}
+      </section>
+    </>
+  );
+};
 
 export default Article;
-
