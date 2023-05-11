@@ -1,9 +1,11 @@
 const Footer = () => {
+    const currentYear = new Date().getFullYear();
+  
     return (
-        <footer>
-            <p>© Schroeder Zine 2022</p>
-        </footer>
-    )
-}
-
-export default Footer;
+      <footer>
+        <p>© Schroeder Zine {currentYear}</p>
+      </footer>
+    );
+  };
+  
+  export default Footer;
