@@ -3,17 +3,17 @@ import ArticleTile from "../src/components/ArticleTile";
 import ContentfulApi from "../utils/ContentfulApi";
 
 export async function getStaticProps() {
-  const articleList = await ContentfulApi.getArticles();
+  const satireList = await ContentfulApi.getArticles('satirical');
 
   return {
     props: {
-      articles: articleList,
+      satireArticles: satireList,
     },
   };
 }
 
-const Articles = ({ articles }) => {
-  const sortedArticles = [...articles].sort((a, b) => {
+const SatireArticles = ({ satireArticles }) => {
+  const sortedArticles = [...satireArticles].sort((a, b) => {
     return new Date(b.date) - new Date(a.date);
   });
 
@@ -23,11 +23,11 @@ const Articles = ({ articles }) => {
         <title>Schroeder Zine - Articles</title>
       </Head>
       <section className="container">
-        <h1>ARTICLES</h1>
+        <h1>SATIRICAL ARTICLES</h1>
         <ul className="tiles-list">
-          {sortedArticles.map((article, index) => (
+          {sortedArticles.map((satireArticles, index) => (
             <li key={index}>
-              <ArticleTile article={article} dir="articles" />
+              <ArticleTile article={satireArticles} dir="satire"/>
             </li>
           ))}
         </ul>
@@ -36,4 +36,4 @@ const Articles = ({ articles }) => {
   );
 };
 
-export default Articles;
+export default SatireArticles;

@@ -1,10 +1,10 @@
 import Link from "next/link";
 import dateParser from "../../utils/dateParser";
 
-const ArticleTile = ({ article }) => {
+const ArticleTile = ({ article, dir }) => {
   const { title, subHeading, mediaCollection, date, legacy } = article;
   const slug = title.toLowerCase().split(' ').join('-');
-  const path = `/articles/${slug}`;
+  const path = `/${dir}/${slug}`;
   const [image] = mediaCollection.items;
 
   const newDate = dateParser(date, legacy);
