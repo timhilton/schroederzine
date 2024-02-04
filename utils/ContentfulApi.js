@@ -43,10 +43,13 @@ export default class ContentfulApi {
         return aboutContent;
     }
 
-    static async getArticles() {
+    static async getArticles(tag = '') {
+        const tagFilter = tag ? `(where: {contentfulMetadata: {tags_exists: true, tags: {id_contains_some: ["${tag}"]}}})` : `(where: { 
+        contentfulMetadata: {tags_exists: false}})`;
+    
         const query = `
         {
-            articleCollection {
+            articleCollection${tagFilter} {
                 items {
                     title,
                     subHeading,
@@ -66,13 +69,15 @@ export default class ContentfulApi {
                     hasHeader
                 }
             }
-        }`
-
+        }`;
+    
         const response = await this.callContentful(query);
+        console.log(response);
         let articles = response.data.articleCollection.items;
-
+    
         return articles;
     }
+    
 
     static async getMusicReviews() {
         const query = `

@@ -31,7 +31,8 @@ const Nav = () => {
             { href: "/about", label: "About" },
             { href: "/music", label: "Music" },
             { href: "/movies", label: "Movies" },
-            { href: "/articles", label: "Articles" }
+            { href: "/articles", label: "Articles" },
+            { href: "/satire", label: "Satire"}
         ];
 
         return links.map((link, index) => (
