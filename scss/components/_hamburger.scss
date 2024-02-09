@@ -30,7 +30,7 @@
       }
     }
   
-    @include small {
+    @include medium {
       display: flex;
       justify-content: space-between;
       flex-direction: column;

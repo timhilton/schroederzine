@@ -11,7 +11,7 @@
 }
 
 @mixin medium {
-    @media screen and (min-width: $medium-min) and (max-width: $medium-max) {
+    @media screen and (max-width: $medium-max) {
         @content;
     }
 }

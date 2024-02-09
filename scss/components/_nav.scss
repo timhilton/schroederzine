@@ -14,7 +14,7 @@ nav {
   z-index: 4;
   padding: 0 24px;
 
-  @include small {
+  @include medium {
     height: $nav-height-s;
     padding: 0 16px;
   }
@@ -33,7 +33,7 @@ nav {
     svg {
       height: 32px;
 
-      @include small {
+      @include medium {
         height: 28px;
       }
     }
@@ -55,7 +55,7 @@ nav {
       }
     }
 
-    @include small {
+    @include medium {
       background-color: $background;
     }
   }
@@ -72,7 +72,7 @@ nav {
       }
     }
 
-    @include small {
+    @include medium {
       display: none;
 
       &.mobile {
@@ -112,7 +112,7 @@ nav {
     }
   }
 
-  @include small {
+  @include medium {
     display: block;
   }
 }
