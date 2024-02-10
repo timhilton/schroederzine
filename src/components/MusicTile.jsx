@@ -13,10 +13,10 @@ const MusicTile = ({ music }) => {
           <h4 className="artist">{artist}</h4>
           {label && <h4>{label}</h4>}
           {links && (
-            <Link href={links}>
-              <a target="_blank" rel="noopener noreferrer">
+            <Link href={links} target="_blank" rel="noopener noreferrer">
+              
                 Listen
-              </a>
+              
             </Link>
           )}
         </div>

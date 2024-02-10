@@ -19,10 +19,10 @@ const MovieTile = ({movie}) => {
                         <h4><strong>Actors:</strong> {actors}</h4>
                     }
                     {link &&
-                        <Link href={link}>
-                            <a target="_blank" rel="noopener noreferrer">
+                        <Link href={link} target="_blank" rel="noopener noreferrer">
+                            
                                 Watch
-                            </a>
+                            
                         </Link>
                     }
                 </div>
@@ -31,7 +31,7 @@ const MovieTile = ({movie}) => {
                 {documentToReactComponents(copy?.json)}
             </div>
         </div>
-    )
+    );
 }
 
 export default MovieTile;

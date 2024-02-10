@@ -72,7 +72,6 @@ export default class ContentfulApi {
         }`;
     
         const response = await this.callContentful(query);
-        console.log(response);
         let articles = response.data.articleCollection.items;
     
         return articles;

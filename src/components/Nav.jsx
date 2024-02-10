@@ -37,8 +37,8 @@ const Nav = () => {
 
         return links.map((link, index) => (
             <li key={index}>
-                <Link href={link.href}>
-                    <a className="nav-links" onClick={handleLinkClick}>{link.label}</a>
+                <Link href={link.href} className="nav-links" onClick={handleLinkClick}>
+                    {link.label}
                 </Link>
             </li>
         ));
@@ -48,9 +48,9 @@ const Nav = () => {
         <nav>
             <div className={open ? "nav-content hairline" : "nav-content"}>
                 <Link href="/">
-                    <a>
-                        <Logo />
-                    </a>
+
+                    <Logo />
+
                 </Link>
                 <ul className="nav-links-container">
                     {renderLinks()}
@@ -65,7 +65,7 @@ const Nav = () => {
                 </ul>
             </div>
         </nav>
-    )
+    );
 }
 
 export default Nav;
