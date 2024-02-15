@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@vercel/analytics": "^1.1.4",
     "@vercel/speed-insights": "^1.0.9",
     "countapi-js": "^1.0.2",
     "eslint-config-next": "^14.1.0",
